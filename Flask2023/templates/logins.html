@@ -1,0 +1,59 @@
+<!Doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Amplifier</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../static/img/favicon.ico">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+	<!-- Section: Design Block -->
+	<section class="widget-box">
+		
+		<div class="mx-auto login-area">
+			<div class="bg-dark w-100 mx-auto br-12 overflow-hidden">
+				
+			<div class="form-widget py-5 px-sm-5 px-3">
+				<div class="text-center mb-4">
+					<a class="logo" href="#">
+						<img  src="../static/img/logo/logo.png">
+					</a>
+				</div>
+					<form class="form_design auth_page" action="{{ url_for('page_sign') }}" method="post">
+						<!-- Email input -->
+						<div class="form-outline mb-4">
+							<input name="username" type="text" class="form-control" placeholder="Username / Email Address" />
+						</div>
+
+						<!-- Password input -->
+						<div class="form-outline mb-1">
+							<input name="password" type="password" class="form-control" placeholder="Password" />
+						</div>
+
+						<div class="d-flex justify-content-end mb-3 mb-md-4">
+							<a href="./reset_password">Forgot password?</a>
+						</div>
+
+						<!-- Submit button -->
+						<div class="d-flex justify-content-center align-items-center">
+							<button type="submit" class="btn common_btn small_btn h-auto px-5 py-2">Sign In</button>
+						</div>
+					</form>
+				</div>
+				   <p class="d-flex justify-content-center align-items-center">Don't have an account? <a class="d-flex justify-content-center align-items-center" href="{{url_for('register')}}"> Sign Up here</a></p>
+
+			</div>
+		</div>
+	</section>
+	<!-- Section: Design Block -->
+
+    <!-- Scripts -->
+    <script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

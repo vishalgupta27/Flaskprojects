@@ -1,0 +1,36 @@
+<!-- Store this code in 'register.html' file inside the 'templates' folder -->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Profile Update</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<body></br></br></br></br></br>
+		<div align="center">
+		<div align="center" class="border">
+			<div class="header">
+				<h1 class="word">Profile</h1>
+			</div></br></br></br>
+			<h2 class="word">
+
+              <form method="POST" action="{{ url_for('edit_user') }}" enctype="multipart/form-data">
+				  <input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox" value="{{ user.username }}" required/></br></br>
+				  <input id="address" name="address" type="text" placeholder="Enter Your address" class="textbox" value="{{ user.address }}" required/></br></br>
+				  <input id="email" name="email" type="text" placeholder="Enter Your email" class="textbox" value="{{ user.email }}" required/></br></br>
+       			 <label>Profile Image:</label>
+        			{% if user.images %}
+            <img src="{{ url_for('static', filename='uploads/' + user.images) }}" alt="Profile Image" width="100" height="70">
+        {% else %}
+            <img src="{{ url_for('static', filename='default_profile.png') }}" alt="Default Profile Image" width="100" height="70">
+        {% endif %}
+				  <input id="profile_image" name="profile_image" type="file"  class="textbox"  required/>
+				  </br>
+				  <input type="submit" class="btn" value="Update">
+</form>
+			</h2>
+			<p class="bottom">You Want SignIn? <a class="bottom" href="{{url_for('page_sign')}}"> Click here</a></p>
+		</div>
+		</div>
+	</body>
+</html>
